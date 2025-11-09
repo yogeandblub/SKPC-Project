@@ -15,14 +15,20 @@ public class AnimationTriggers : MonoBehaviour
             santaCharController.SetTrigger("Idle");
             Debug.Log("Back to Idle!");
         }
-        else 
+        else
         {
             //start twerking
             santaCharController.ResetTrigger("Idle");
             santaCharController.SetTrigger("Twerk");
             Debug.Log("Twerk is triggered!");
         }
-         // Flip the state
+        // Flip the state
         isTwerking = !isTwerking;
+    }
+    private void OnMouseDown()
+    {
+        // Only triggers on touch/click if you tap Santa
+        santaCharController.SetTrigger("Fight");
+        Debug.Log("Fight triggered!");
     }
 }
