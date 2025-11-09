@@ -25,10 +25,10 @@ public class AnimationTriggers : MonoBehaviour
         // Flip the state
         isTwerking = !isTwerking;
     }
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         // Only triggers on touch/click if you tap Santa
-        santaCharController.SetTrigger("Fight");
+        santaCharController.SetTrigger("fist_fight");
         Debug.Log("Fight triggered!");
     }
 }
