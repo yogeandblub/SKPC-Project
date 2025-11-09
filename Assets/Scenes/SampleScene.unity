@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9a1284b489b4ddfaccea153ffa6691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationTriggers
-  santaCharController: {fileID: 0}
+  santaCharController: {fileID: 1292306183}
 --- !u!4 &30162525
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 30162524}
         m_TargetAssemblyTypeName: AnimationTriggers, Assembly-CSharp
-        m_MethodName: TwerkDance
+        m_MethodName: ToggleDance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1062,6 +1062,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1292306183 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
+  m_PrefabInstance: {fileID: 1057430192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
