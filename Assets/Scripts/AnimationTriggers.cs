@@ -25,10 +25,31 @@ public class AnimationTriggers : MonoBehaviour
         // Flip the state
         isTwerking = !isTwerking;
     }
-    public void OnMouseDown()
+    void Update()
     {
-        // Only triggers on touch/click if you tap Santa
-        santaCharController.SetTrigger("fist_fight");
-        Debug.Log("Fight triggered!");
+        if (Input.GetMouseButtonDown(0))
+        {
+            DetectTap();
+        }
+
+        // Also handle mobile touch
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            DetectTap();
+        }
+    }
+
+    void DetectTap()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform == transform)
+            {
+                santaCharController.SetTrigger("Tap");
+            }
+        }
     }
 }
