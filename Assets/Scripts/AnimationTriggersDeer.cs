@@ -8,43 +8,21 @@ public class OrcAnimationController : MonoBehaviour
     // Guarda el último estado reproducido (por defecto "Idle")
     private string currentState = "Idle";
 
-    // ¿Estamos bailando o en Idle?
-    private bool isDancing = false;
-
-    // --- MÉTODO PARA EL BOTÓN ---
-
-    // Llama a esto desde el botón del Orc
-    public void ToggleDance()
-    {
-        if (isDancing)
-        {
-            // Volver a Idle
-            ChangeState("Idle");
-        }
-        else
-        {
-            // Empezar a bailar (puedes usar "Jazz" o "Breakdance")
-            ChangeState("Jazz");
-        }
-
-        isDancing = !isDancing;
-    }
-
-    // --- MÉTODOS OPCIONALES POR SI QUIERES LLAMARLOS DIRECTO ---
+    // --- MÉTODOS PARA ANIMACIONES ---
 
     public void PlayIdle()
     {
-        ChangeState("Idle");
+        ChangeState("Idle");          // Trigger "Idle"
     }
 
     public void PlayJazz()
     {
-        ChangeState("Jazz");
+        ChangeState("Jazz");          // Trigger "Jazz"
     }
 
     public void PlayBreakdance()
     {
-        ChangeState("Breakdance");
+        ChangeState("Breakdance");    // Trigger "Breakdance"
     }
 
     // --- CAMBIO DE ESTADO GENERAL ---
@@ -59,5 +37,44 @@ public class OrcAnimationController : MonoBehaviour
 
         currentState = newTrigger;
         Debug.Log("Orc animation changed to: " + newTrigger);
+    }
+
+    // --- DETECCIÓN DE TOQUES / CLICS EN EL PERSONAJE (OPCIONAL) ---
+    void Update()
+    {
+        // Clic con mouse (para PC)
+        if (Input.GetMouseButtonDown(0))
+        {
+            DetectTap();
+        }
+
+        // Toque en pantalla (para móvil)
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            DetectTap();
+        }
+    }
+
+    private void DetectTap()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Solo reacciona si se hace clic en el modelo del orco
+            if (hit.transform == transform)
+            {
+                // Ejemplo: alterna entre Jazz y Breakdance al tocar el orco
+                if (currentState == "Jazz")
+                {
+                    PlayBreakdance();
+                }
+                else
+                {
+                    PlayJazz();
+                }
+            }
+        }
     }
 }
