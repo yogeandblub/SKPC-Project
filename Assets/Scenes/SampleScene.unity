@@ -5224,9 +5224,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ddc1befc4f0fc44b6a8a9be6d56405, type: 3}
+  m_Script: {fileID: 11500000, guid: 88c41550c70d97442aa1e0db2214edab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
+  santaTarget: {fileID: 1292306184}
+  orcTarget: {fileID: 897856602}
+  distance: 5
+  height: 2
+  smoothSpeed: 5
 --- !u!1 &339156931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5891,6 +5896,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &897856602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
+  m_PrefabInstance: {fileID: 1496295175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &974907299
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,7 +6120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330585548}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
         m_MethodName: FocusOrc
         m_Mode: 1
@@ -6129,6 +6139,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
+        m_MethodName: FocusOrc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6559,6 +6581,11 @@ RectTransform:
 --- !u!95 &1292306183 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
+  m_PrefabInstance: {fileID: 1057430192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1292306184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
   m_PrefabInstance: {fileID: 1057430192}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1496295175
