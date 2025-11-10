@@ -5227,11 +5227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ddc1befc4f0fc44b6a8a9be6d56405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  santaTarget: {fileID: 1292306184}
-  orcTarget: {fileID: 897856602}
-  distance: 5
-  height: 2
-  smoothSpeed: 5
 --- !u!1 &339156931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,7 +5763,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 010591d510936ba41b582448bac27b48, type: 3}
+  m_Resource: {fileID: 8300000, guid: bda8b6fe0114549c18e886ad0c740989, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 2.26
@@ -5896,11 +5891,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!4 &897856602 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
-  m_PrefabInstance: {fileID: 1496295175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &974907299
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,11 +6559,6 @@ RectTransform:
 --- !u!95 &1292306183 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
-  m_PrefabInstance: {fileID: 1057430192}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1292306184 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
   m_PrefabInstance: {fileID: 1057430192}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1496295175
