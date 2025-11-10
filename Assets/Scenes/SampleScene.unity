@@ -5089,6 +5089,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5214,6 +5215,23 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ddc1befc4f0fc44b6a8a9be6d56405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
+  santaTarget: {fileID: 1292306184}
+  orcTarget: {fileID: 897856602}
+  distance: 5
+  height: 2
+  smoothSpeed: 5
 --- !u!1 &339156931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,7 +5418,7 @@ GameObject:
   - component: {fileID: 547035138}
   - component: {fileID: 547035137}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Focus Santa Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5485,6 +5503,18 @@ MonoBehaviour:
       - m_Target: {fileID: 339156932}
         m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
         m_MethodName: ToggleDanceMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
+        m_MethodName: FocusSanta
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5839,6 +5869,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &897856600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
+  m_PrefabInstance: {fileID: 1496295175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &897856601
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897856600}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
+  m_Controller: {fileID: 9100000, guid: 54b6e4ef62ee7cc4db1be1d2447f3bac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &897856602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
+  m_PrefabInstance: {fileID: 1496295175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &974907299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5896,7 +5958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Deer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -5988,7 +6050,7 @@ GameObject:
   - component: {fileID: 988021450}
   - component: {fileID: 988021449}
   m_Layer: 5
-  m_Name: Orc Button
+  m_Name: Orc Dance Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6057,7 +6119,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 988021450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
+        m_MethodName: FocusOrc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 897856600}
+        m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &988021450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6485,6 +6571,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
   m_PrefabInstance: {fileID: 1057430192}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1292306184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7159bc0b5de054660aac8b70f65bb005, type: 3}
+  m_PrefabInstance: {fileID: 1057430192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1496295175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6549,10 +6640,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 54b6e4ef62ee7cc4db1be1d2447f3bac, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 897856601}
   m_SourcePrefab: {fileID: 100100000, guid: 3fa974daab945954e8d6be8dc841dd94, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
