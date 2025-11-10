@@ -5231,7 +5231,9 @@ MonoBehaviour:
   orcTarget: {fileID: 897856602}
   distance: 5
   height: 2
-  smoothSpeed: 5
+  positionSmooth: 5
+  rotationSmooth: 5
+  orbitSpeed: 30
 --- !u!1 &339156931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,7 +5516,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 330585548}
         m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
-        m_MethodName: FocusSanta
+        m_MethodName: OnSantaButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6146,7 +6148,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 330585548}
         m_TargetAssemblyTypeName: CameraSwitcher, Assembly-CSharp
-        m_MethodName: FocusOrc
+        m_MethodName: OnOrcButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
